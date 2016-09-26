@@ -4,6 +4,7 @@ $positive: #404286;
 $loading-font-size: 22px;
 $font-stack: 'Montserrat', sans-serif;
 
+@import "{}/node_modules/reactionic/dist/scss/styles/reactionic.scss";
 
 // override ionic's default.
 // reference: https://github.com/meteoric/meteor-ionic/issues/264
