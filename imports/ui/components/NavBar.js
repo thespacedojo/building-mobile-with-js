@@ -8,7 +8,7 @@ class NavBar extends React.Component {
         <IonHeaderBar customClasses="bar-assertive" alignTitle="center" title={<img src="/images/cityforks-03.png" className="logo" alt="CITYFORKS" />} />
         <IonNavView>
           <IonView {...this.props}>
-            {this.props.children}
+            {React.cloneElement(this.props.children, {geo: this.props.geo})}
           </IonView>
         </IonNavView>
       </div>
