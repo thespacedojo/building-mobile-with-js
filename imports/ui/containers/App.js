@@ -17,10 +17,17 @@ class AppContainer extends Tracker.Component {
     })
   }
 
-  componentWillUpdate(nextProps, nextState) {
-    console.log(`Next State: ${JSON.stringify(nextState)}`);
-    if (nextState.location)
-      Meteor.call('places/fetch', nextState.location);
+  componentDidUpdate(prevProps, prevState) {
+    console.log("Component did update")
+    if (this.state.location) {
+      console.log('Going to fetch places');
+      Meteor.call('places/fetch', this.state.location);
+    }
+  }
+
+  shouldComponentUpdate(nextProps, nextState) {
+    console.log(nextState.location != this.state.location);
+    return nextState.location != this.state.location;
   }
 
   render() {
