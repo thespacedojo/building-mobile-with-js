@@ -39,3 +39,7 @@ Meteor.publish('places/nearby', function(coords) {
   });
   this.ready();
 });
+
+Meteor.publish('places/nearbyBox', function(bottomLeft, topRight) {
+  return Places.find({point: {$geoWithin: {$box: [bottomLeft, topRight]}}});
+});

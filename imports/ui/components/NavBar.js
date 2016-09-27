@@ -1,5 +1,5 @@
 import React from 'react';
-import { IonHeaderBar, IonView, IonNavView } from 'reactionic';
+import { IonHeaderBar, IonView, IonNavView, IonTabs, IonTab } from 'reactionic';
 
 class NavBar extends React.Component {
   render() {
@@ -11,6 +11,10 @@ class NavBar extends React.Component {
             {React.cloneElement(this.props.children, {geo: this.props.geo})}
           </IonView>
         </IonNavView>
+        <IonTabs tabsTop={false} >
+          <IonTab icon="ios-home" to="/" label="Places" />
+          <IonTab icon="ios-location" to="/map" label="Map" />
+        </IonTabs>
       </div>
     )
   }
