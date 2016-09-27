@@ -1,6 +1,8 @@
 import React from 'react';
 import { IonSubHeaderBar, IonContent, IonList, IonItem } from 'reactionic';
 import Price from '/imports/ui/components/Price.js';
+import Distance from '/imports/ui/components/Distance.js';
+import Rating from '/imports/ui/components/Rating.js';
 
 const PlacesList = ({places}) => {
   return (
@@ -25,6 +27,8 @@ const Place = ({place}) => {
           <h2>{place.name}</h2> 
           <p>
             <Price price={place.price_level} />
+            <Distance distance={place.distance} />
+            <Rating rating={place.rating} />
           </p>
         </div>
       </div>
